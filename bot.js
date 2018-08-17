@@ -29,3 +29,53 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 });
 
 client.login(process.env.BOT_TOKEN);
+```
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help-admin") {
+         if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply(`
+         
+         **لست من المشرفين لن يتم ارسال الرسالة إليك**
+         
+         
+         `);
+         message.channel.send('**لقد تم ارسال رسالة المساعدة في الرسائل الخاصة**');
+            
+    
+         
+
+
+ message.author.sendMessage(`
+ **
+
+╔[❖══════════════════════❖]╗
+       اوامر المشرفين
+╚[❖══════════════════════❖]╝
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ ❖ $kick <mention > ➾ لطرد الأعضاء
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ ❖ $clear ➾ لمسح الشات
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 
+ ❖ $mute < mention > ➾ لإعطاء ميوت للإعضاء
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ ❖ $unmute <mention> ➾ لفك الميوت عن الأعضاء
+ =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 
+ ❖ $bc <message> ➾ لإرسال رسالة جماعية
+ =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ ❖ $closeroms <message> ➾ لإغلاق الشات
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= 
+ ❖ $openroms <message> ➾ لفتح الشات
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ ❖ $server <message> ➾ لمعرفة نبذه عن السيرفر
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ ❖ $warn <message> ➾ لإعطاء انذار لأحد الأعضاء
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+ ❖ $clear <message> ➾ لمسح الشات
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+By abokhalil
+`);
+
+    }
+});
