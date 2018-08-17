@@ -29,7 +29,7 @@ client.user.setGame(`speacial bot`,"http://twitch.tv/S-F")
 });
 
 client.login(process.env.BOT_TOKEN);
-```
+
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help-admin") {
